@@ -1,4 +1,5 @@
 DESTDIR=server
+current_dir=$(shell pwd)
 
 all: start
 	@echo "Done"
@@ -16,12 +17,12 @@ docker-build:
 
 docker-start:
 	@echo "starting the NEW service in container..."
-	docker run  -p 8080:8080 predict_demo
-	
+	docker run  -p 8080:8080 -v predict_demo
+
 docker-inter:
 	@echo "starting the NEW service in container interactively..."
-	docker run  -p 8080:8080 -it predict_demo
-
+	docker run  -p 8080:8080 -v $$(pwd):/bitcoin_pred/ -it predict_demo
+	@echo "Working dir:" current_dir
 service:
 	@echo "creating the service..."
 	pip install --upgrade pip
