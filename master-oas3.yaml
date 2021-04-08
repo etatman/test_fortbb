@@ -54,7 +54,7 @@ paths:
     get:
       tags:
         - TEST
-      operationId: os_pack.bitcoin_ml_app.output
+      operationId: os_pack.cpu_2020.os
       description: Returns os information of the hosting server
       responses:
         '200':
