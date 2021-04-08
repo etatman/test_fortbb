@@ -54,7 +54,7 @@ paths:
     get:
       tags:
         - TEST
-      operationId: os_pack.cpu_2020.os
+      operationId: os_pack.cpu_2020.get_os
       description: Returns os information of the hosting server
       responses:
         '200':
