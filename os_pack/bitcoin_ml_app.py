@@ -310,3 +310,16 @@ output()
 my_model = regr4.fit( T_train.reshape(-1,1) , logP4_train );
 from joblib import dump, load 
 dump(my_model, 'Bitcoin_model.pkl')
+
+import json
+
+def my_prediction(arg1):
+    # Step one pickel model and load pickeled model into here
+    my_model = load("Bitcoin_model.plk")
+    # Step two extract user argument (arg1) use it to make prediction
+    my_prediction = my_model.preict(arg1)
+    # Step 3 get predcition into json form to pass through rest API
+    my_predstr = my_prediction.tolist()
+    my_predstr = json.dump(my_predstr)
+    str = [my_predstr]
+return str
