@@ -12,7 +12,7 @@ app = connexion.App(__name__, specification_dir="./")
 
 # Read the yaml file to configure the endpoints
 #app.add_api("etatman-BitCoin_E222_Project-0.0-swagger.yaml")
-app.add_api("master.yaml")
+app.add_api("master-oas3.yaml")
 
 # create a URL route in our application for "/"
 @app.route("/")

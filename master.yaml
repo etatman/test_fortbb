@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  version: '0.0'
+  title: BitCoin Prediction API
+  description: Predicts if user should buy/sell Bitcoin today.
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    name: Eric Tatman
+    email: etatman@iu.edu
+  license:
+    name: Apache
+servers:
+  - url: 'https://localhost:8080'
+paths:
+  /test/:
+   get:
+    tags:
+      - output
+    operationID: bitcoin_ml_app.output
+    descriptioni: Returns if you should buy or sell
+    parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: array
+            items:
+              type: number
+            minItems: 1
+          style: simple
+          explode: true
+        - in: query
+          name: metadata
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPU'
