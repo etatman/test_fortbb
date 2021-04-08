@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  version: 0.0-oas3
+  title: cpuinfo
+  description: >-
+    A simple service to get cpuinfo as an example of using swagger-2.0
+    specification and codegen
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: Cloudmesh REST Service Example
+  license:
+    name: Apache
+paths:
+  /cpu:
+    get:
+      tags:
+        - CPU
+      operationId: os_pack.cpu.get_processor_name
+      description: Returns cpu information of the hosting server
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPU'
+  /sum/<arg1>/<arg2>:
+    get:
+      tags:
+        - SUM
+      operationId: os_pack.sum.sum
+      description: Returns cpu information of the hosting server
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPU'
+  /os:
+    get:
+      tags:
+        - OS
+      operationId: os_pack.cpu_2020.get_os
+      description: Returns os information of the hosting server
+      responses:
+        '200':
+          description: 'os info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OS'
+  /test:
+    get:
+      tags:
+        - TEST
+      operationId: os_pack.bitcoin_ml_app.output
+      description: Returns os information of the hosting server
+      responses:
+        '200':
+          description: 'os info, or add more text'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OS'
+servers:
+  - url: 'http://localhost:8080/engr-222'
+components:
+  schemas:
+    CPU:
+      type: object
+      required:
+        - model
+      properties:
+        model:
+          type: string
+    OS:
+      type: object
+      required:
+        - model
+      properties:
+        model:
+          type: string
