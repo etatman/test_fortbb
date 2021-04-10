@@ -1,4 +1,4 @@
-def my_prediction(T_train.reshape(1245,1)):
+def my_prediction():
     # Step one pickel model and load pickeled model into here
     my_model = load("Bitcoin_model.plk")
     # Step two extract user argument (arg1) use it to make prediction
