@@ -63,6 +63,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OS'
+  /my_prediction:
+    get:
+      tags:
+        - BIT
+      operationId: os_pack.my_prediction.my_prediction
+      description: bit pred
+      responses:
+        '200':
+          description: 'get pred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIT'  
 servers:
   - url: 'http://localhost:8080/engr-222'
 components:
