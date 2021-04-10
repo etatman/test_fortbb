@@ -94,3 +94,10 @@ components:
       properties:
         model:
           type: string
+    BIT:
+      type: object
+      required:
+        - model
+      properties:
+        model:
+          type: string
