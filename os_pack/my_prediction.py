@@ -3,7 +3,7 @@ import numpy as np
 
 def my_prediction():
     # Step one pickel model and load pickeled model into here
-    my_model = np.load("Bitcoin_model.plk")
+    my_model = np.load("Bitcoin_model.pkl")
     # Step two extract user argument (arg1) use it to make prediction
     my_prediction = my_model.preict(T_train.reshape(1245,1))
     # Step 3 get predcition into json form to pass through rest API
