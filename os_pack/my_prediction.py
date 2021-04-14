@@ -1,4 +1,5 @@
 import numpy as np
+import Bitcoin_model.plk
 
 def my_prediction():
     # Step one pickel model and load pickeled model into here
